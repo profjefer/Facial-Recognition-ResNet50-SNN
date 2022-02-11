@@ -1,4 +1,6 @@
 celeba/
+celeba_pairs/
+celeba_partitions/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
