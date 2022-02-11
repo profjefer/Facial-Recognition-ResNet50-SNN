@@ -52,21 +52,20 @@ def euclidean_distance(vectors: Tuple[tf.Tensor, tf.Tensor]) -> tf.Tensor:
 class SNNGenerator():  
     """
     Abstract data generator class for SNN
-    """
-    def __init__(self):
-        pass
-        
+    """ 
     def on_epoch_end(self):
         pass
 
     def __len__(self) -> int:
-        return 0
+        raise Exception('The SNNGerator class is abstract. To be usable, it must be inherited and the __len__ and __getitem__ methods must be overridden.')
+        #return 0
 
-    def __getitem__(self, index: int) -> Tuple[List[np.ndarray, np.ndarray], np.ndarray]:
-        return ([None, None], None)
+    def __getitem__(self, index: int) -> Tuple[List[np.ndarray], np.ndarray]:
+        raise Exception('The SNNGerator class is abstract. To be usable, it must be inherited and the __len__ and __getitem__ methods must be overridden.')
+        #return ([None, None], None)
 
 class SNN():
-    def __init__(self, encoder: keras.Model, optimizer: optimizers.Optimizer = 'adamax', distance_function: Callable = euclidean_distance):
+    def __init__(self, input_shape, encoder: keras.Model, optimizer: optimizers.Optimizer = 'adamax', distance_function: Callable = euclidean_distance):
         """Generate a SNN arch for the encoder model.
         Args:
             encoder_model (keras.Model): Uncompiled model that will be used as encoder.
@@ -80,8 +79,10 @@ class SNN():
         self.validation_loss_history = []
 
         #SNN has two inputs.
-        input_a = layers.Input(shape=encoder.layers[0].input_shape)
-        input_b = layers.Input(shape=encoder.layers[0].input_shape)
+        #input_a = layers.Input(shape=encoder.layers[0].input_shape[1:])
+        #input_b = layers.Input(shape=encoder.layers[0].input_shape[1:])
+        input_a = layers.Input(shape=input_shape)
+        input_b = layers.Input(shape=input_shape)
 
         #One encoder for each input. Both encoders have the same weights.
         encoder_a = encoder(input_a)
