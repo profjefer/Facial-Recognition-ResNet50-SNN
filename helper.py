@@ -180,7 +180,7 @@ def download_celeba():
     if(not os.path.exists('celeba')):
         os.mkdir('celeba')
 
-    #download_extract('celeba', dest_path)
+    download_extract('celeba', dest_path)
     print('Downloading metadata...')
     gdd.download_file_from_google_drive(file_id='1_ee_0u7vcNLOfNLegJRHmolfH5ICW-XS',
                                     dest_path=os.path.join('celeba', "identity_CelebA.txt"),
