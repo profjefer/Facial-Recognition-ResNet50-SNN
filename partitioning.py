@@ -20,6 +20,7 @@ def get_persons_ids():
     return np.unique(identity_df[PERSON_COLUMN])
 
 def build_celeba_partitions():
+    print(f'Generating partitions (EVAL=1/{DENOMINATOR}, TRAIN={DENOMINATOR-1}/{DENOMINATOR})')
     ids = get_persons_ids()
     np.random.shuffle(ids)
     

@@ -10,6 +10,7 @@ import tensorflow.keras.backend as K
 from tensorflow.keras import layers
 import numpy as np
 from tqdm import tqdm
+import os
 from typing import *
 
 def contrastive_loss(y: tf.Tensor, preds: tf.Tensor, margin=1) -> tf.Tensor:
@@ -151,3 +152,8 @@ class SNN():
             if epoch_end_callback != None:
                 epoch_end_callback(snn=self, epoch=epoch, training_loss=training_loss, validation_loss=validation_loss)
     
+    def save(self, path: str):
+        self.__encoder__.save_weights(path)
+    
+    def load(self, path: str):
+        self.__encoder__.load_weights(path)
