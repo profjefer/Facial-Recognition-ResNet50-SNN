@@ -152,8 +152,8 @@ class SNN():
             if epoch_end_callback != None:
                 epoch_end_callback(snn=self, epoch=epoch, training_loss=training_loss, validation_loss=validation_loss)
     
-    def save(self, path: str):
+    def save_encoder(self, path: str):
         self.__encoder__.save_weights(path)
     
-    def load(self, path: str):
+    def load_encoder(self, path: str):
         self.__encoder__.load_weights(path)
