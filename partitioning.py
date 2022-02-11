@@ -1,3 +1,8 @@
+'''
+Filipe Chagas
+10 - Feb - 2022
+'''
+
 import helper
 import pandas as pd
 import numpy as np
