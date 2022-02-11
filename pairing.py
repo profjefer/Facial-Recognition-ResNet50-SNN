@@ -48,7 +48,7 @@ def get_pairs(ids: Iterable) -> Tuple[pd.DataFrame, pd.DataFrame]:
 
     return get_genuine_pairs(), get_impostor_pairs()
 
-if __name__ == '__main__':
+def build_celeba_pairs():
     with open(os.path.join('celeba_partitions', 'partitions.json'), 'r') as f:
         partitions = json.load(f)
 
@@ -57,12 +57,21 @@ if __name__ == '__main__':
 
     #Eval pairs
     print('EVAL')
-    eval_genuine_pairs, eval_impostor_pairs = get_pairs(partitions['eval'])
-    eval_genuine_pairs.to_csv(os.path.join('celeba_pairs', 'eval_genuine_pairs.csv'))
-    eval_impostor_pairs.to_csv(os.path.join('celeba_pairs', 'eval_impostor_pairs.csv'))
+    if not (os.path.exists(os.path.join('celeba_pairs', 'eval_genuine_pairs.csv')) and os.path.exists(os.path.join('celeba_pairs', 'eval_impostor_pairs.csv'))):
+        eval_genuine_pairs, eval_impostor_pairs = get_pairs(partitions['eval'])
+        eval_genuine_pairs.to_csv(os.path.join('celeba_pairs', 'eval_genuine_pairs.csv'))
+        eval_impostor_pairs.to_csv(os.path.join('celeba_pairs', 'eval_impostor_pairs.csv'))
+    else:
+        print('Already generated')
 
     #Training pairs
     print('TRAINING')
-    training_genuine_pairs, training_impostor_pairs = get_pairs(partitions['training'])
-    training_genuine_pairs.to_csv(os.path.join('celeba_pairs', 'training_genuine_pairs.csv'))
-    training_impostor_pairs.to_csv(os.path.join('celeba_pairs', 'training_impostor_pairs.csv'))
+    if not (os.path.exists(os.path.join('celeba_pairs', 'training_genuine_pairs.csv')) and os.path.exists(os.path.join('celeba_pairs', 'training_impostor_pairs.csv'))):
+        training_genuine_pairs, training_impostor_pairs = get_pairs(partitions['training'])
+        training_genuine_pairs.to_csv(os.path.join('celeba_pairs', 'training_genuine_pairs.csv'))
+        training_impostor_pairs.to_csv(os.path.join('celeba_pairs', 'training_impostor_pairs.csv'))
+    else:
+        print('Already generated')
+        
+if __name__ == '__main__':
+    build_celeba_pairs()

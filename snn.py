@@ -139,7 +139,7 @@ class SNN():
             # --- Epoch validation loop ---
             for i in tqdm(range(len(validation_generator))): #For each batch index
                 vx, vy = validation_generator[i] #Get the current validation batch
-                validation_loss_sum += self.keras_model.evaluate(vx, vy, batch_size=validation_generator.batch_size, verbose=0, return_dict=True)['loss'] #evaluate model with the current batch
+                validation_loss_sum += self.keras_model.evaluate(vx, vy, batch_size=validation_generator.__batch_size__, verbose=0, return_dict=True)['loss'] #evaluate model with the current batch
                 validation_loss = validation_loss_sum / (i+1) #Update loss mean
 
             print(f'validation_loss={validation_loss:.4f}')
