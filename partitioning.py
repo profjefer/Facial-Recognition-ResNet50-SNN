@@ -25,5 +25,5 @@ if __name__ == '__main__':
     if not os.path.exists('celeba_partitions'):
         os.mkdir('celeba_partitions')
 
-    with open(os.path.join('celeba_partitions', 'partitions.json'), 'w', encoding='utf-8') as file:
-        json.dump({'eval': [int(x) for x in eval_ids], 'training': [int(x) for x in training_ids]}, file,  ensure_ascii=False, indent=4)
+    with open(os.path.join('celeba_partitions', 'partitions.json'), 'w') as file:
+        json.dump({'eval': [int(x) for x in eval_ids], 'training': [int(x) for x in training_ids]}, file, indent=4)
