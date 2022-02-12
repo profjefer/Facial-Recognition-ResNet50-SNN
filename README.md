@@ -32,6 +32,7 @@ The CelebA dataset (Liu et al) contains photos of human faces with some attribut
 ## Notebooks
 
 1. [Training](training.ipynb) - In this notebook, there is a more detailed explanation about the functioning of a SNN and there is also the SNN training code used here.
+2. [Histogram](histogram.ipynb) - In this group, the performance of the trained SNN is verified using a histogram of distances and a ROC curve.
 
 ## Trained models
 
