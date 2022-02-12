@@ -33,6 +33,10 @@ The CelebA dataset (Liu et al) contains photos of human faces with some attribut
 
 1. [Training](training.ipynb) - In this notebook, there is a more detailed explanation about the functioning of a SNN and there is also the SNN training code used here.
 
+## Trained models
+
+* [resnet50_encoder_weights.h5 (12-Feb-2022)](https://github.com/FilipeChagasDev/Facial-Recognition-ResNet50-SNN/releases/download/1.0.0/resnet50_encoder_weights.h5) - Trained with 6050 pairs and validated with 2000 pairs. 100 training epochs. *training_loss=0.0228*, *validation_loss=0.1833*. 
+ 
 ## References
 
 * Bromley, J., Bentz, J., Bottou, L., Guyon, I., Lecun, Y., Moore, C., … Shah, R. (08 1993). Signature Verification using a “Siamese” Time Delay Neural Network. International Journal of Pattern Recognition and Artificial Intelligence, 7, 25. doi:10.1142/S0218001493000339
