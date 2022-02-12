@@ -31,7 +31,7 @@ The CelebA dataset (Liu et al) contains photos of human faces with some attribut
 
 ## Notebooks
 
-1. [training](training.ipynb) - In this notebook, there is a more detailed explanation about the functioning of a SNN and there is also the SNN training code used here.
+1. [Training](training.ipynb) - In this notebook, there is a more detailed explanation about the functioning of a SNN and there is also the SNN training code used here.
 
 ## References
 
