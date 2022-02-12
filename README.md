@@ -12,7 +12,10 @@ A Siamese Neural Network (SNN) has two identical neural sub-networks (siamese tw
 
 ResNet50 is an artificial neural network convolutional architecture composed of residual convolutional blocks, initially proposed by K. He et al in 2016.
 
-![ResNet Block](https://cdn-images-1.medium.com/max/1600/1*SGrc3VC3fbirosDPW0AmMA.png)
+
+| ![ResNet Block](https://cdn-images-1.medium.com/max/1600/1*SGrc3VC3fbirosDPW0AmMA.png) |
+|:--:|
+| **Fig. 1 - Identity and Convolution Blocks in ResNet.** (Source: https://www.analyticsvidhya.com/blog/2021/08/how-to-code-your-resnet-from-scratch-in-tensorflow/)  |
 
 In this work, the ResNet50 architecture was used as the encoder base, just adding a linear dense layer to the output to generate the feature vectors.
 
@@ -22,7 +25,9 @@ The data used in this project comes from the CelebA public dataset.
 
 The CelebA dataset (Liu et al) contains photos of human faces with some attributes. In this project, cropped photos of faces were used, and the attributes used were people's identification (each person is identified by a natural number in the dataset).
 
-![CelebA](img/celeba_plots.png)
+| ![CelebA](img/celeba_plots.png) |
+|:--:|
+|**Fig. 2 - Some faces from the CelebA dataset**|
 
 ## Notebooks
 
