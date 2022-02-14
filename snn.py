@@ -116,6 +116,8 @@ class SNN():
         assert start_epoch >= 1
         assert epochs >= start_epoch
         assert len(training_generator) > len(validation_generator)
+        
+        tf.logging.set_verbosity(tf.logging.ERROR)
 
         self.training_loss_history = []
         self.validation_loss_history = []
